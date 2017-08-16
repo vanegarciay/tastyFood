@@ -42,7 +42,7 @@ input::-webkit-input-placeholder{
         width: 50vh;
         height: 6vh;
         border-radius: 10px;
-        font-family: 'Roboto', sans-serif;
+        font-family: $roboto;
         margin-bottom: -10px;
     }
 
@@ -51,7 +51,7 @@ input::-webkit-input-placeholder{
         margin: 11.1rem 0 6.68rem;
     }
     .donthave{
-        font-family: 'Roboto', sans-serif;
+        font-family: $roboto;
         color: $white;
     }
 }
@@ -74,7 +74,7 @@ input::-webkit-input-placeholder{
         width: 50vh;
         height: 6vh;
         border-radius: 10px;
-        font-family: 'Roboto', sans-serif;
+        font-family: $roboto;
         font-size: 15px;
     }
 }
@@ -99,7 +99,7 @@ input::-webkit-input-placeholder{
         width: 50vh;
         height: 6vh;
         border-radius: 10px;
-        font-family: 'Roboto', sans-serif;
+        font-family: $roboto;
         font-size: 15px;
     }
 }
