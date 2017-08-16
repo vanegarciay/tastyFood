@@ -1,0 +1,21 @@
+.welcome {
+    background: url('../img/tastyfoodintro.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%;
+    color: $white;
+    font-family: $tipografia_main;
+
+    &__btn {
+        background: $main_color;
+    }
+}
+
+
+/*NAVBAR*/
+
+.navbar_main {
+    background: $main_color;
+}
