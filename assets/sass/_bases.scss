@@ -103,3 +103,7 @@ input::-webkit-input-placeholder{
         font-size: 15px;
     }
 }
+
+#name_message, #mail_message, #password_message, #mail_error, #password_error {
+    display: none;
+}
