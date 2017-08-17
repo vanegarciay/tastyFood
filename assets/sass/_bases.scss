@@ -18,6 +18,11 @@
 
 .navbar_main {
     background: $main_color;
+    .oso{
+        display: flex;
+        justify-content: center;
+
+    }
 }
 
 /*section search*/
@@ -29,17 +34,8 @@
     background-color: $main_color;
 }
 
-
-
-.caja{
-    @include cajitas();
-    width: 200px;
-    height: 200px;
-    background-color: #ffab40;   
-}
-
 .end{
-    width: 300px;
+    width: 100%;
     height: 50px;
     background-color: #ffab40;
     display: flex;
@@ -52,10 +48,6 @@
     justify-content: flex-end;
 }
 
-.elegir{
-    width: 200px;
-    border: 2px solid #fff59d;
-}
 .imagenes{
     margin: 10px;
     padding-bottom: 10px;
