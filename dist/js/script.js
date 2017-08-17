@@ -20321,25 +20321,15 @@ $(document).ready(function() {
 
 
 					$(".filtrar").click(function(){
+
 						var elegir = $(".elegir").val();
 						if (elegir == city){
 							$('.lista').hide();
 							$('.lista2').append(estructura);
+							
 						}
 
-						$('#'+ elId).click(function() {
-							$('.end').empty();
-							$('.end').append('<div class="row center orange">Nombre</div>'+
-										    '<div class="row center">'+
-										      '<h6 class="naranjo">Address</h6>'+
-										      '<p>l'+ direccion +'</p>'+
-										      '<h6 class="naranjo">Price</h6>'+
-										      '<p>'+ moneda+costo +'</p>'+
-										      '<h6 class="naranjo">Rating</h6>'+
-										      '<p>'+ calificacion +'</p>'+
-										    '</div>');
-
-						});
+	
 					});
 
 					$('#'+ elId).click(function() {
@@ -20362,6 +20352,5 @@ $(document).ready(function() {
 			})
 			
 		});
-
 // FIN FUNCIONES SEARCH
 });

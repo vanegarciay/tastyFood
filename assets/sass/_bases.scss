@@ -26,31 +26,45 @@
     margin: 0;
     padding: 0;
     font-family: 'Anton', sans-serif;
-    background-color: $main_color;
+}
+select{
+    width: 100%;
+    height: 50px;
+    font-family: $robototo;
 }
 
-.nav{
+.end{
     width: 100%;
-    height: 60px;
-    background-color: #fb8c00;
-}
-.nav h4{
-    color: white;
+    height: 50px;
+    background-color: #ffab40;
     display: flex;
     justify-content: center;
-}
-
-.caja{
-    width: 200px;
-    height: 200px;
-    background-color: #ffc107;
-}
-
-#cajita{
-    margin: 0;
-    width: 200px;
-    height: 30px;
-    background-color:#ffeb3b;
     color: white;
+}
+.favorite{ 
+    margin-top: -36px;
+    display: flex;
+    justify-content: flex-end;
+}
+.filtrar{
+    width:300px;
+    height:50px;
+    color: white;
+    background-color: #f57c00;
+    font-size: 20px;
+    font-family: $robototo;
+}
+.imagenes{
+    margin: 10px;
+    padding-bottom: 10px;
+}
 
+.card{
+    position: relative;
+}
+
+.card-content{
+    background-color: #ef6c00;
+    color: white;
+    font-family: $robototo;
 }
