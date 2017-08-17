@@ -16,8 +16,10 @@
 
 /*NAVBAR*/
 
-.navbar_main {
-    background: $main_color;
+.nav{
+    background-color: #ff9800;
+    display: flex;
+    justify-content: space-around;
     .oso{
         display: flex;
         justify-content: center;
@@ -33,6 +35,14 @@
     font-family: 'Anton', sans-serif;
     background-color: $main_color;
 }
+select{
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+     font-family: $robototo;
+
+}
 
 .end{
     width: 100%;
@@ -47,16 +57,21 @@
     display: flex;
     justify-content: flex-end;
 }
-
+.filtrar{
+    width:300px;
+    height:50px;
+    color: white;
+    background-color: #ffb300;
+    font-family: $robototo;
+}
 .imagenes{
     margin: 10px;
     padding-bottom: 10px;
 
 }
 
-.imagenes2{
-    border: 2px solid #fff59d;
-    .card-content{
-       @include cajitas();
-    }
+.card-content{
+    background-color: #ef6c00;
+    color: white;
+    font-family: $robototo;
 }
