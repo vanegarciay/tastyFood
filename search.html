@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Tasty Food section search</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!--meta-->
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<!-- MATERIALIZE Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--tipografia-->
-	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Roboto+Condensed" rel="stylesheet">
-    <!--css--> 
-	<link rel="stylesheet" type="text/css" href="assets/sass/_bases.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body id="search">
- <nav>
-  <div class="container">
-  	<div class="row">
-  	  <div class="col s12 center">	
-        <div class="navbar_main">
-            <a href="index.html"  class="button-collapse left"><i class="material-icons">arrow_back</i></a>
-            <h4 class="oso">SEARCH</h4>
+<body  id="search">
+    <nav>
+        <div class="nav-wrapper navbar_main">
+            <a href="discover.html" class="left"><i class="material-icons">arrow_back</i></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="index.html">Home</a></li>
@@ -32,39 +20,85 @@
                 <li><a href="profile.html">Profile</a></li>
             </ul>
         </div>
-      </div>
-  	</div>
-  </div>     
- </nav>
-	<select class="elegir browser-default">
-    	<option selected disabled>City</option>
- 	</select>
-	<button class="filtrar">Filtro</button>
+    </nav>
+        <select class="elegir browser-default">
+        <option selected disabled>City</option>
+    </select>
+    <button class="filtrar">Filtro</button>
 
-  	<section class="imagenes">
-    	<div class="container">
-      		<div class="row lista"></div>
-    	</div>
-  	</section> 
-  	<section class="imagenes2">
-    	<div class="container">
-      	   <div class="row lista2"></div>
-         </div>
-    </section>
+    <section class="imagenes">
+        <div class="container">
+            <div class="row lista">
+            <!-- elementos farsos -->
+                <div class="col s4 m4" id="elId"> 
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-style" src="http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p class="left-align"><i class="fa fa-cutlery" aria-hidden="true"></i> nombre </p>
+                            <span>comuna</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 m4" id="elId"> 
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-style" src="http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p class="left-align"><i class="fa fa-cutlery" aria-hidden="true"></i> nombre </p>
+                            <span>comuna</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 m4" id="elId"> 
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-style" src="http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p class="left-align"><i class="fa fa-cutlery" aria-hidden="true"></i> nombre </p>
+                            <span>comuna</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 m4" id="elId"> 
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-style" src="http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg">
+                        </div>
+                        <div class="card-content">
+                            <p class="left-align"><i class="fa fa-cutlery" aria-hidden="true"></i> nombre </p>
+                            <span>comuna</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin elementos farsos -->
+            </div>
+        </div>
+    </section> 
+    <section class="imagenes2">
+        <div class="container">
+        <div class="row lista2"></div>
+    </div>
+  </section>
 
   <footer class="end">
-      <div class="container">
-      	<div class="row">
-      		<div class="col s12">
-      			<p>LE BISTROT</p><i class="favorite material-icons">favorite</i>
-      		</div>
-      	</div>
-      </div>       
+        <!-- elementos farsos 2 -->
+        <div class="row center orange">Nombre</div>
+            <div class="row center">
+                <h6 class="naranjo">Address</h6>
+                <p>direccion</p>
+                <h6 class="naranjo">Price</h6>
+                <p>moneda+costo</p>
+                <h6 class="naranjo">Rating</h6>
+                <p>calificacion</p>
+            </div>
+        <!-- fin elementos farsos 2 -->
   </footer>
-  
-  <script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
-  <script src="dist/js/script.js"></script>
-
-	
+    <!-- Icons -->
+    <script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
+    <script src="dist/js/script.js"></script>
 </body>
 </html>

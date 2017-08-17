@@ -20255,11 +20255,11 @@ if (jQuery) {
 
 $(document).ready(function() {
     $(".button-collapse").sideNav();
-});
+
 
 // INICIO FUNCIONES SEARCH
     var miUrl = 'https://developers.zomato.com/api/v2.1/search?entity_id=';
-	var key = '3613a4477cdfae05247764cc24f280df';
+	var key = '6b6572afb1176bb5737f5ce8c7bee502';
 	var code = ['67','73','83','97','257','280'];
 
 	code.forEach(function(e){
@@ -20362,5 +20362,5 @@ $(document).ready(function() {
 			})
 			
 		});
-
 // FIN FUNCIONES SEARCH
+});
