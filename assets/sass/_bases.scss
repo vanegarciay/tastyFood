@@ -19,3 +19,47 @@
 .navbar_main {
     background: $main_color;
 }
+
+/*Profile*/
+
+.image-profile{
+    margin: 0 auto;
+    text-align: center;
+    img{
+        width: 100%;
+    }
+    .input-field {
+        margin-top: -20px;
+    }
+
+    .btn {
+        background-color: $main_color;
+        height: 45px;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    .file-field .file-path-wrapper{
+        background-color: $main_color;
+        height: 45px;
+    }
+}
+.profile-data{
+    background-color: #EAEAEA;
+    height: 200px;
+    padding: 0 20px;
+    .el-profile-data{
+        background-color: $white;
+        margin-top: 10px;
+        p{
+            display: inline-block;
+            color: $main_color;
+            margin-left: 10px;
+        }
+    }
+    .favorites-title{
+        h1{
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
