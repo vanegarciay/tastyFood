@@ -18,4 +18,38 @@
 
 .navbar_main {
     background: $main_color;
+
+    &__arrow {
+        padding-left: 45%;
+    }
+
+    &__title {
+        padding-left: 33%;
+        font-family: $tipografia_main;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
+}
+
+
+/*DISCOVER*/
+
+.select {
+    background: #EAEAEA;
+    width: 100%;
+    height: 100%;
+
+    select {
+        display: block;
+        width: 90%;
+        margin: 13px;
+        color: #B79F8B;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
 }
