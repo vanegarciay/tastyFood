@@ -1,3 +1,32 @@
+/*estilos en común para los html*/
+/*navbar*/
+.navbar_main {
+    background: $main_color;
+}
+
+.flechita{
+    margin-left: 15px;
+}
+
+nav i, nav i.material-icons{  //tamaño iconos navbar
+    font-size: 35px;
+}
+
+input[type=text]:not(.browser-default){
+    background-color: $white;
+    border: 0.5px solid $bordeinput;
+    border-radius: 3px; 
+    font-size: 16px;
+    margin: 2px 0px 2px;
+    padding: 5px 0px 5px; 
+    color: $graytext;   
+}
+input::-webkit-input-placeholder{
+    padding-left: 15px;
+    color: $graytext;
+}
+
+/*HOME index.html*/
 .welcome {
     background: url('../img/tastyfoodintro.jpg');
     height: 100vh;
@@ -10,11 +39,74 @@
 
     &__btn {
         background: $main_color;
+        width: 50vh;
+        height: 6vh;
+        border-radius: 10px;
+        font-family: $roboto;
+        margin-bottom: -10px;
+    }
+
+    h1{
+        font-size: 3.2rem;
+        margin: 11.1rem 0 6.68rem;
+    }
+    .donthave{
+        font-family: $roboto;
+        color: $white;
     }
 }
 
+/*SIGN UP */
+.signup{
+    background-color: $graybg;
+    height: 100vh; 
+    .signup-title{
+        color: $main_color;
+        font-size: 3.2rem;
+        margin: 6.1rem 0 0.1rem;
+        font-family: $tipografia_main;
+    }
+    p{
+        color: $graytext;
+    }   
+    .create__btn{
+        background: $main_color;
+        width: 50vh;
+        height: 6vh;
+        border-radius: 10px;
+        font-family: $roboto;
+        font-size: 15px;
+    }
+}
 
-/*NAVBAR*/
+/*LOG IN*/
+.login{ 
+    background-color: $graybg;
+    height: 100vh;
+
+    .login-title{
+        color: $main_color;
+        font-size: 3.2rem;
+        margin: 6.1rem 0 2.1rem;
+        font-family: $tipografia_main;
+    }
+    input::-webkit-input-placeholder{
+        padding-left: 15px;
+        color: $graytext;
+    }
+    .enter__btn{
+        background: $main_color;
+        width: 50vh;
+        height: 6vh;
+        border-radius: 10px;
+        font-family: $roboto;
+        font-size: 15px;
+    }
+}
+
+#name_message, #mail_message, #password_message, #mail_error, #password_error {
+    display: none;
+}
 
 .navbar_main {
     background: $main_color;
@@ -53,3 +145,50 @@
     margin: 0;
     padding: 0;
 }
+
+}
+
+/*Profile*/
+
+.image-profile{
+    margin: 0 auto;
+    text-align: center;
+    img{
+        width: 100%;
+    }
+    .input-field {
+        margin-top: -20px;
+    }
+
+    .btn {
+        background-color: $main_color;
+        height: 45px;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    .file-field .file-path-wrapper{
+        background-color: $main_color;
+        height: 45px;
+    }
+}
+.profile-data{
+    background-color: #EAEAEA;
+    height: 200px;
+    padding: 0 20px;
+    .el-profile-data{
+        background-color: $white;
+        margin-top: 10px;
+        p{
+            display: inline-block;
+            color: $main_color;
+            margin-left: 10px;
+        }
+    }
+    .favorites-title{
+        h1{
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
+
