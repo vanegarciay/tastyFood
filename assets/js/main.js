@@ -107,6 +107,5 @@ $(document).ready(function() {
 			})
 			
 		});
-
 // FIN FUNCIONES SEARCH
 });
