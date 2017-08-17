@@ -29,28 +29,42 @@
     background-color: $main_color;
 }
 
-.nav{
-    width: 100%;
-    height: 60px;
-    background-color: #fb8c00;
-}
-.nav h4{
-    color: white;
-    display: flex;
-    justify-content: center;
-}
+
 
 .caja{
+    @include cajitas();
     width: 200px;
     height: 200px;
-    background-color: #ffc107;
+    background-color: #ffab40;   
 }
 
-#cajita{
-    margin: 0;
-    width: 200px;
-    height: 30px;
-    background-color:#ffeb3b;
+.end{
+    width: 300px;
+    height: 50px;
+    background-color: #ffab40;
+    display: flex;
+    justify-content: center;
     color: white;
+}
+.favorite{ 
+    margin-top: -36px;
+    display: flex;
+    justify-content: flex-end;
+}
 
+.elegir{
+    width: 200px;
+    border: 2px solid #fff59d;
+}
+.imagenes{
+    margin: 10px;
+    padding-bottom: 10px;
+
+}
+
+.imagenes2{
+    border: 2px solid #fff59d;
+    .card-content{
+       @include cajitas();
+    }
 }
