@@ -20256,8 +20256,10 @@ if (jQuery) {
 $(document).ready(function() {
   $(".button-collapse").sideNav();
 
+    	
+});
 
-/*SECCION CARGANDO IMAGEN PERFIL*/
+    /*SECCION CARGANDO IMAGEN PERFIL - tiene q estar fuera para q no se vaya todo al carajillo*/
     function subirImagen(){
     	 $('#image-user').attr('src', localStorage.fileImage); //mostrara siempre la imagen guardada al cargar el documento
 
@@ -20282,4 +20284,3 @@ $(document).ready(function() {
 	        readURL(this); 
 	    });
 	}subirImagen()
-});
