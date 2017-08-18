@@ -20531,8 +20531,8 @@ $(document).ready(function() {
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"> ' + elNombre +  '</div>' +
-							              		'<div class="col s8 comuna right-align">' + comuna + ' <i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
+							              		'<div class="left-align nombre col s4"><p> ' + elNombre +  '</p></div>' +
+							              		'<div class="col s8 comuna right-align"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
 							        '</div>');
@@ -20543,8 +20543,8 @@ $(document).ready(function() {
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"> ' + elNombre +  '</div>' +
-							              		'<div class="col s8 comuna right-align">' + comuna + ' <i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
+							              		'<div class="left-align nombre col s4"><p> ' + elNombre +  '</p></div>' +
+							              		'<div class="col s8 comuna right-align"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
 							        '</div>');
