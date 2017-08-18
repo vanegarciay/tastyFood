@@ -27,44 +27,78 @@
     padding: 0;
     font-family: 'Anton', sans-serif;
 }
-select{
-    width: 100%;
+.browser-default{
+    width: 112%;
     height: 50px;
     font-family: $robototo;
+    margin-left: -6%;
 }
 
-.end{
-    width: 100%;
-    height: 50px;
-    background-color: #ffab40;
-    display: flex;
-    justify-content: center;
-    color: white;
-}
 .favorite{ 
     margin-top: -36px;
     display: flex;
     justify-content: flex-end;
 }
 .filtrar{
-    width:300px;
-    height:50px;
-    color: white;
+    width: 112%;
+    height: 50px;
+    color: #fff;
     background-color: #f57c00;
     font-size: 20px;
-    font-family: $robototo;
+    margin-left: -6%;
+    border:none;
 }
-.imagenes{
-    margin: 10px;
-    padding-bottom: 10px;
-}
+
 
 .card{
     position: relative;
 }
 
-.card-content{
+.card .card-content{
     background-color: #ef6c00;
     color: white;
     font-family: $robototo;
+    padding: 0;
+    height: 8vh;
+    .nombre{
+        font-size:0.5em;
+        font-weight:bolder;
+    }
+    .comuna{
+        font-size:0.5em;
+        font-weight:normal;
+    }
+}
+
+.end{
+    position: fixed;
+    width:103%;
+    z-index: 2;
+    bottom: 117px;
+    padding:0;
+    
+}
+.end-nombre{
+    background-color: #ef6c00;
+    margin-left: -5%;
+    width: 100%;
+    display:inline-block;
+}
+.end-datos{
+    display: inline;
+    height: 25vh;
+    background-color: #fff;
+    width: 100%;
+    margin-left: -100%;
+    margin-top: 7%;
+    h6{
+        font-family:$robototo;
+        color:#ef6c00;
+        font-size:0.8em;
+    }
+    p{
+        font-family:$robototo;
+        color:#333;
+        font-size:0.6em
+    }
 }

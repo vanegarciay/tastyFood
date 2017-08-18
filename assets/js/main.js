@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 // INICIO FUNCIONES SEARCH
     var miUrl = 'https://developers.zomato.com/api/v2.1/search?entity_id=';
-	var key = '3613a4477cdfae05247764cc24f280df';
+	var key = '0546cb6852fa227b36383394dae09f98';
 	var code = ['67','73','83','97','257','280'];
 
 	code.forEach(function(e){
@@ -28,6 +28,8 @@ $(document).ready(function() {
 					var costo = element.restaurant.average_cost_for_two;
 					var calificacion = element.restaurant.user_rating.aggregate_rating;
 
+					$('.end').hide();
+
 					if(img == ""){
 						img = 'http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg';
 					}
@@ -41,16 +43,11 @@ $(document).ready(function() {
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<p class="left-align"><i class="fa fa-cutlery" aria-hidden="true"></i> ' + nombre + '</p>' +
-							              		'<span>' + comuna + '</span>' +
+							              		'<div class="left-align nombre col s4"> ' + nombre +  '</div>' +
+							              		'<div class="col s8 comuna right-align">' + comuna + ' <i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
 							        '</div>');
-
-
-					$('.card').css('height','20vh');
-					$('.card').css('padding','0');
-					$('.card-image').css('height','10vh');
 
 					$('.elegir').append('<option value="'+ city +'" id="'+cityId+'">'+ city +'</option>');
 
@@ -64,32 +61,55 @@ $(document).ready(function() {
 
 					$('.lista').append(estructura);
 
+					$('#'+ elId).click(function() {
+						$('.end').show();
+						$('.end').empty();
+						$('.end').append('<div class=" center end-nombre">'+
+												'<div class="col s12">' + nombre +'<i class="fa fa-heart" aria-hidden="true"></i></div>'+
+											  '</div>' +
+										     '<div class=" center end-datos">'+
+										     	'<div class="col s12">'+
+											      	'<h6 class="naranjo">Address</h6>'+
+											      	'<p>l'+ direccion +'</p>'+
+											      	'<h6 class="naranjo">Price</h6>'+
+											      	'<p>'+ moneda+costo +'</p>'+
+											      	'<h6 class="naranjo">Rating</h6>'+
+											      	'<p>'+ calificacion +'</p>'+
+											     '</div>'+
+										    '</div>');
+
+
+					});
+
 
 					$(".filtrar").click(function(){
-
 						var elegir = $(".elegir").val();
 						if (elegir == city){
 							$('.lista').hide();
 							$('.lista2').append(estructura);
-							
 						}
 
-	
-					});
-
-					$('#'+ elId).click(function() {
-						$('.end').empty();
-						$('.end').append('<div class="row center orange">Nombre</div>'+
-										    '<div class="row center">'+
-										      '<h6 class="naranjo">Address</h6>'+
-										      '<p>l'+ direccion +'</p>'+
-										      '<h6 class="naranjo">Price</h6>'+
-										      '<p>'+ moneda+costo +'</p>'+
-										      '<h6 class="naranjo">Rating</h6>'+
-										      '<p>'+ calificacion +'</p>'+
+						$('#'+ elId).click(function() {
+							$('.end').show();
+							$('.end').empty();
+							$('.end').append('<div class="row center end-nombre">'+
+												'<div class="col s12">' + nombre +'</div>'+
+											  '</div>' +
+										     '<div class="row center end-datos">'+
+										     	'<div class="col s12" >'+
+											      	'<h6 class="naranjo">Address</h6>'+
+											      	'<p>l'+ direccion +'</p>'+
+											      	'<h6 class="naranjo">Price</h6>'+
+											      	'<p>'+ moneda+costo +'</p>'+
+											      	'<h6 class="naranjo">Rating</h6>'+
+											      	'<p>'+ calificacion +'</p>'+
+											     '</div>'+
 										    '</div>');
 
+						});
 					});
+
+					
 			    });
 			})
 			.fail(function() {
