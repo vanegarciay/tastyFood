@@ -23,4 +23,15 @@ gulp.task('watch', function(){
 	gulp.watch('assets/sass/main.scss', ['style']);
 });
 
-gulp.task('default', ['script', 'style', 'watch']);
+gulp.task('webserver', function(){
+	gulp.src('../tastyFood/')
+		.pipe(webserver({
+			fallback: 'index.html',
+			livereload: true,
+			directoryListing: false,
+			open:true,
+			port: 8080
+		}));
+});
+
+gulp.task('default', ['script', 'style', 'watch','webserver']);
