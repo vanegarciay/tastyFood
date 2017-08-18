@@ -2,7 +2,17 @@
 /*navbar*/
 .navbar_main {
     background: $main_color;
+    &__arrow{
+        padding-left: 45%;
+    }
+    &__title{    
+        padding-left: 33%;
+        font-family: $tipografia_main;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
 }
+
 
 .flechita{
     margin-left: 15px;
@@ -141,24 +151,17 @@ input::-webkit-input-placeholder{
     border:none;
 }
 
-
-.card{
-    position: relative;
-}
-
 .card .card-content{
-    background-color: #ef6c00;
     color: white;
     font-family: $robototo;
     padding: 0;
     height: 8vh;
     .nombre{
-        font-size:0.5em;
+        font-size:15px;
         font-weight:bolder;
-
     }
     .comuna{
-        font-size:0.5em;
+        font-size:12px;
         font-weight:normal;
     }
 }
@@ -169,18 +172,26 @@ input::-webkit-input-placeholder{
     z-index: 2;
     bottom: 0;
     padding:0;
-    background-color: #fff;
+    background-color: $white;
     
 }
 .end-nombre{
-    background-color: #ef6c00;
+    background-color: #f57c00;
     width: 103%;
     display:inline-block;
-    color: #fff;
-    .add-cor{
-        background-color:transparent;
-        border:none;
+    margin-bottom: -10px;
+    span{
+        color:$white;
+        font-size: 18px;
+        display: inline-block;
     }
+    button{
+        display: inline-block;
+        font-size: 20px;
+        color: $white;
+        padding-left: 10px;
+    }
+
 }
 .end-datos{
     display: inline;
@@ -188,16 +199,15 @@ input::-webkit-input-placeholder{
     
     width: 100%;
     margin-left: -100%;
-    margin-top: 7%;
     h6{
         font-family:$robototo;
         color:#ef6c00;
-        font-size:0.8em;
+        font-size:15px;
     }
     p{
         font-family:$robototo;
-        color:#eee;
-        font-size:0.6em
+        color:#333;
+        font-size:12px;
     }
 }
 
@@ -248,6 +258,18 @@ input::-webkit-input-placeholder{
     .file-field .file-path-wrapper{
         background-color: $main_color;
         height: 45px;
+    }
+    .file-field input[type=file]{
+        position: absolute;
+        right: 35%;
+    }
+    input[type=text]:not(.browser-default){
+        background-color: $main_color;    
+        border: transparent;
+    }
+    .file-field span, input[type=range], input[type=range]+.thumb{
+        position: absolute;
+        right: 35%;
     }
 }
 .profile-data{

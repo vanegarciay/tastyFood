@@ -7,7 +7,7 @@ function init() {
         var maximo = 50;
         var kms = 10000;
         /* API variables */
-        var key = '6b6572afb1176bb5737f5ce8c7bee502';
+        var key = '0546cb6852fa227b36383394dae09f98';
         
         llenarSelectDeCuisines(key);
         marcarCousinesEnMapa(key);
