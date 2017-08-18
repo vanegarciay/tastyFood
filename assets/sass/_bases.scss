@@ -151,64 +151,81 @@ input::-webkit-input-placeholder{
     border:none;
 }
 
+.card{
+   position: relative;
+   min-height: 200px;
+   background-color: #f59342 ;
+   min-height: 220px;
+   i{
+       position: absolute;
+       bottom: 10px;
+       right: 10px;
+       font-size: 15px;
+   }
+}
+
 .card .card-content{
-    color: white;
-    font-family: $robototo;
-    padding: 0;
-    height: 8vh;
-    .nombre{
-        font-size:15px;
-        font-weight:bolder;
-    }
-    .comuna{
-        font-size:12px;
-        font-weight:normal;
-    }
+   color: white;
+   font-family: $robototo;
+   padding: 0;
+   height: 8vh;
+   .nombre{
+       font-size:15px;
+       font-weight:bolder;
+   }
+   .comuna{
+       font-size:12px;
+       font-weight:normal;
+   }
 }
 
 .end{
-    position: fixed;
-    width:103%;
-    z-index: 2;
-    bottom: 0;
-    padding:0;
-    background-color: $white;
-    
+   position: fixed;
+   width:103%;
+   z-index: 2;
+   bottom: 0;
+   padding:0;
+   background-color: $white;
+   
 }
 .end-nombre{
-    background-color: #f57c00;
-    width: 103%;
-    display:inline-block;
-    margin-bottom: -10px;
-    span{
-        color:$white;
-        font-size: 18px;
-        display: inline-block;
-    }
-    button{
-        display: inline-block;
-        font-size: 20px;
-        color: $white;
-        padding-left: 10px;
-    }
+   background-color: #f57c00 ;
+   width: 103%;
+   display:inline-block;
+   margin-bottom: -10px;
+   span{
+       color:$white;
+       font-size: 18px;
+       display: inline-block;
+   }
+   i{
+       display: inline-block;
+       font-size: 20px;
+       color: $white;
+       padding-left: 10px;
+   }
+   button {
+    background: none;
+    border: none;
+   }
 
 }
 .end-datos{
-    display: inline;
-    height: 25vh;
-    
-    width: 100%;
-    margin-left: -100%;
-    h6{
-        font-family:$robototo;
-        color:#ef6c00;
-        font-size:15px;
-    }
-    p{
-        font-family:$robototo;
-        color:#333;
-        font-size:12px;
-    }
+   display: inline;
+   height: 25vh;
+   
+   width: 100%;
+   margin-left: -100%;
+   h6{
+       font-family:$robototo;
+       color:#ef6c00 ;
+       font-size:15px;
+   }
+   p{
+       font-family:$robototo;
+       color:#333;
+       font-size:12px;
+   }
 }
 
 .navbar_main {

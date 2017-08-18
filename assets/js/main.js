@@ -86,7 +86,7 @@ $(document).ready(function() {  //inicializar navbar de materialize
                 reader.readAsDataURL(input.files[0]); //usado para leer el contenido del especificado Blob o File(Blob representa un objeto tipo fichero de datos como los de las imagenes).
             }
             else{
-                $('#image-user').attr('src', 'http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif');
+                $('#image-user').attr('src', 'http://s3.amazonaws.com/cdn.roosterteeth.com/default/md/user_profile_female.jpg');
             }
         }
         

@@ -3,7 +3,7 @@ var count = 0;
 $(document).ready(function() {
 // INICIO FUNCIONES SEARCH
     var miUrl = 'https://developers.zomato.com/api/v2.1/search?entity_id=';
-	var key = '0546cb6852fa227b36383394dae09f98';
+	var key = '123143e17d605b6afdbdc048c7a11a4f';
 	var code = ['67','73','83','97','257','280'];
 
 	code.forEach(function(e){
@@ -41,26 +41,26 @@ $(document).ready(function() {
 
 					//Estructuras de información general de todos los restaurants
 
-					var estructura = ('<div class="col s4 m4" id="' + elId +'"> ' +
+					var estructura = ('<div class="col s6 m4" id="' + elId +'"> ' +
 							          	'<div class="card">' +
 							            	'<div class="card-image">'+
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"><p> ' + elNombre +  '</p></div>' +
-							              		'<div class="col s8 comuna right-align"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
+							              		'<div class="left-align nombre col s12"><p> ' + elNombre +  '</p></div>' +
+							              		'<div class="col s12 comuna"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
 							        '</div>');
 
-					var estructura2 = ('<div class="col s4 m4" id="footer-' + elId +'"> ' +
+					var estructura2 = ('<div class="col s6 m4" id="footer-' + elId +'"> ' +
 							          	'<div class="card">' +
 							            	'<div class="card-image">'+
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"><p> ' + elNombre +  '</p></div>' +
-							              		'<div class="col s8 comuna right-align"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
+							              		'<div class="left-align nombre col s12"><p> ' + elNombre +  '</p></div>' +
+							              		'<div class="col s12 comuna"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
 							        '</div>');
@@ -81,7 +81,7 @@ $(document).ready(function() {
 						$('.end').show();
 						$('.end').empty();
 						//Estructura contenido footer
-						$('.end').append('<div class="row center end-nombre">'+
+						$('.end').append('<div class="row center end-nombre z-depth-4">'+
 												'<div class="col s12"><span class="center">' + elNombre + '</span>'+
 													'<button id="'+elId + '-add"  class="add-cor"><i class="fa fa-heart"  aria-hidden="true"></i></button>'+
 												'</div>'+
