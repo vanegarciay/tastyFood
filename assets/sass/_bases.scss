@@ -196,6 +196,8 @@ input::-webkit-input-placeholder{
     }
 }
 
+.navbar_main {
+    background: $main_color;
 
     &__arrow {
         padding-left: 45%;
@@ -208,7 +210,6 @@ input::-webkit-input-placeholder{
         letter-spacing: 2px;
     }
 }
-
 
 /*DISCOVER*/
 
