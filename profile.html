@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper navbar_main">
+            <a href="discover.html" class="left"><i class="material-icons">arrow_back</i></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="image-profile">
+        <img id="image-user" src="http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif" alt="your image" />
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Upload Photo</span>
+                <input type="file" id="imgInp" class="file-path validate">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="profile-data">
+        <div class="container">
+            <div class="row">
+                <div class="el-profile-data col s12">
+                    <p>Name: </p><p id="name-profile-data"></p>
+                </div>
+                 <div class="el-profile-data email-profile-data col s12">
+                    <p>Email: </p><p id="email-profile-data"></p>
+                </div>
+                <div class="favorites-title col s12">
+                    <h1>FAVORITES</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-data-fav container">
+        <div class="row">
+        </div>
+    </div>
+    <!-- Icons -->
+    <script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
+    
+
+    <script src="dist/js/script.js"></script>
+</body>
+</html>

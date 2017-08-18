@@ -3,58 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Search</title>
+    <title>Discover</title>
     <link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="nav-wrapper navbar_main">
-            <a href="index.html" class="left flechita"><i class="material-icons">arrow_back</i></a>
+            <a href="search.html" class="left"><i class="material-icons navbar_main__arrow">arrow_back</i></a>
+            <a class="navbar_main__title">DISCOVER</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="login.html">Log in</a></li>
-                <li><a href="signup.html">Sign up</a></li>
                 <li><a href="search.html">Search</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="profile.html">Profile</a></li>
             </ul>
         </div>
     </nav>
- 	<div class="container">
-    	<div class="row">
-        	<div class="col s12 center">
-            	<select class="elegir browser-default">
-                	<option selected disabled>City</option>
-            	</select>
-             	<button class="filtrar">Filtro</button>
-        	</div>
-    	</div>
-	</div>
-	<section class="imagenes">
-    	<div class="container">
-      		<div class="row lista">
-      			
-      		</div>
-    	</div>
-  	</section> 
-    <section class="imagenes2">
-        <div class="container">
-        	<div class="row lista2"></div>
-    	</div>
-  	</section>
-
-  <footer class="end">
-
-              
-  </footer>
-  
-  <script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
-  <script src="dist/js/script.js"></script>
+        <div class="container select">
+            <div class="row">
+                <div class="col s12">
+                    <select>
+                        <option value="" selected>Cousine</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    <div class="container-fliud">
+        <div class="row">
+            <div class="col s12" id="map">
+                <!-- Aqui ira nuestro mapa -->
+            </div>
+        </div>
+    </div>
+    <!-- Icons -->
+    <script src="dist/js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1FUSqPLTTh8Sk78z93nsv2m0SUdQH3po&callback=init"></script>
 </body>
 </html>
-
-   
-
-

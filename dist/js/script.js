@@ -20253,8 +20253,139 @@ if (jQuery) {
   };
 })(jQuery);
 
-$(document).ready(function() {
+function init() {
+    $(document).ready(function() {
+        var cuisine = "";
+        var latitud = -33.4724728;
+        var longitud = -70.6058022;
+        var mapZoom = 12;
+        var maximo = 50;
+        var kms = 10000;
+        /* API variables */
+        var key = '354485b8128e52e86b87366a6444882c';
+        
+        llenarSelectDeCuisines(key);
+        marcarCousinesEnMapa(key);
+
+        var map = new google.maps.Map(document.getElementById("map"));
+        resetMap();
+
+        $(".select select").on("change", function(){
+            cuisine = $(this).val();
+            resetMap();
+        });
+
+        function resetMap() {
+            map = new google.maps.Map(document.getElementById("map"),{
+                zoom: mapZoom,
+                center: {lat: latitud, lng: longitud},
+                mapTypeControl: true,
+                zoomControl: true,
+                streetViewControl: true
+            });
+
+            google.maps.event.addListener(map, 'zoom_changed', function() {
+                mapZoom = map.getZoom();
+            });
+
+            google.maps.event.addListener(map, 'idle', function(event){
+                latitud = map.getCenter().lat();
+                longitud = map.getCenter().lng();
+            });
+
+            marcarCousinesEnMapa(key);
+        }
+
+        function llenarSelectDeCuisines(key) {
+            var url = 'https://developers.zomato.com/api/v2.1/cuisines?';
+            
+            $.ajax({
+                url: url,
+                type: 'GET',
+                beforeSend: function(request) {
+                    request.setRequestHeader("user-key", key);
+                },
+                dataType: 'json',
+                data: {
+                    'lat': latitud,
+                    'lon': longitud
+                }
+            })
+            .done(function(response){
+                //console.log(response.cuisines);
+                response.cuisines.forEach(function(single) {
+                    var id = single.cuisine.cuisine_id;
+                    var cuisine = single.cuisine.cuisine_name;
+                    var option = `<option value="${id}">${cuisine}</option>`;
+                    $(".select select").append(option);
+                })
+            })
+            .fail(function() {
+                console.log("error");
+            });
+        }
+
+        function marcarCousinesEnMapa(key) {
+            var url = 'https://developers.zomato.com/api/v2.1/search?';
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                beforeSend: function(request) {
+                    request.setRequestHeader("user-key", key);
+                },
+                dataType: 'json',
+                data: {
+                    'count': maximo,
+                    'lat': latitud,
+                    'lon': longitud,
+                    'radius': kms,
+                    'cuisines': cuisine
+                }
+            })
+            .done(function(response){
+                response.restaurants.forEach(function(single) {
+                    var lat = single.restaurant.location.latitude;
+                    var lon = single.restaurant.location.longitude;
+                    marcarRestaurant(lat, lon);
+                })
+            })
+            .fail(function() {
+                console.log("error");
+            })
+        }
+
+        function marcarRestaurant(lat, lon) {
+            var marker = crearMarcador(map);
+
+            marker.setPosition(new google.maps.LatLng(lat,lon));
+            marker.setVisible(true);
+        }
+
+        function crearMarcador(map) {
+            var icono = {
+                url: 'https://lh3.ggpht.com/QZjCEmi1T4U62vjYCQ-78KDEYwPfFXSv27_XU-MmE9fNtprQ_Z3KlyrZJOw3SrdTmw=w300',
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(35, 35)
+            };
+
+            var marker = new google.maps.Marker({
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: icono,
+                anchorPoint: new google.maps.Point(0, -29)
+            });
+
+            return marker;
+        }
+
+    });
+}
+$(document).ready(function() {  //inicializar navbar de materialize
     $(".button-collapse").sideNav();
+
 
 
 // INICIO FUNCIONES SEARCH
@@ -20374,3 +20505,98 @@ $(document).ready(function() {
 		});
 // FIN FUNCIONES SEARCH
 });
+
+    /*validación de formulario SIGN UP*/
+    var correo = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+    var password = /^[0-9]+(\.[0-9])?$/;
+
+
+    $("#btn-crear").click(function(){
+        var nombre = $("#name").val();        
+        var email = $("#email").val();
+        var contrasena = $("#password").val();
+        
+        if(nombre == ""){   
+            $("#name_message").show();           
+                //return false;
+            }else{
+                $("#name_message").hide();
+                localStorage.setItem('Name', nombre);
+            //var nombreSignUp = localStorage.getItem('Name'); 
+			//alert(nombreSignUp);
+        }
+
+        if(email == "" || !correo.test(email)){
+            $("#mail_message").show();
+            //return false;
+        }else{
+            $("#mail_message").hide();
+            localStorage.setItem('E-mail', email);
+        }
+
+        if(contrasena == "" || !password.test(contrasena)){
+            $("#password_message").show();
+            return false;
+        }else{
+            $("#password_message").hide();
+            localStorage.setItem('Password', contrasena);
+        }
+        return true; 
+
+        nombre = $("#name").val(" ");  //esto para limpiar los datos una vez puestos 
+        email = $("#email").val(" ");
+        contrasena = $("#password").val(" "); 
+    });  
+
+    var nombreSignUp = localStorage.getItem('Name'); 
+    var emailSignUp = localStorage.getItem('E-mail'); 
+    var contrasenaSignUp = localStorage.getItem('Password'); 
+    $("#name-profile-data").html(nombreSignUp);
+    $("#email-profile-data").html(emailSignUp);
+
+
+    /*Validación de LOGIN*/
+    $("#btn-login").click(function(){         
+         var mailLogin = $("#mail_login").val();
+         var passLogin = $("#password_login").val();
+
+         if (mailLogin != emailSignUp) {
+            $("#mail_error").show();
+         }
+         if(passLogin != contrasenaSignUp){
+            $("#password_error").show();
+        }else{
+            window.open('search.html','_self');
+        }
+        
+    });
+});
+
+
+    /*SECCION CARGANDO IMAGEN PERFIL - tiene q estar fuera para q no se vaya todo al carajillo*/
+    function subirImagen(){
+    	 $('#image-user').attr('src', localStorage.fileImage); //mostrara siempre la imagen guardada al cargar el documento
+
+		function readURL(input) { //Pasa como parametro el input
+	        if (input.files[0] != undefined) {  //Si el input no esta vacío
+	            var reader = new FileReader(); // es una funcion predefinida de javascript permite que las aplicaciones web lean ficheros (o información en buffer) almacenados en el cliente, usando los objetos File o Blob.
+	            
+	            reader.onload = function (e) { //cuando termine de cargar en new FileReader
+	            	//console.log(e);  //Es el objeto completo de la imagen
+	            	//console.log(e.target.result); //Es la url de la imagen
+	            	localStorage.fileImage =  e.target.result; //Es la direccion donde esta almacenada la imagen del lado de usuario
+	                $('#image-user').attr('src', localStorage.fileImage);
+	            }
+	            reader.readAsDataURL(input.files[0]); //usado para leer el contenido del especificado Blob o File(Blob representa un objeto tipo fichero de datos como los de las imagenes).
+	        }
+	        else{
+	        	$('#image-user').attr('src', 'http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif');
+	        }
+	    }
+	    
+	    $("#imgInp").change(function(){ // cuando el input cambie llamara a la funcion readUrl
+	        readURL(this); 
+	    });
+	}subirImagen()
+
+
