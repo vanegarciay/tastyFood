@@ -20520,7 +20520,6 @@ $(document).ready(function() {
                         img = 'http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg';
                     }
 
-<<<<<<< HEAD
                     
 
 
@@ -20582,79 +20581,6 @@ $(document).ready(function() {
                                                  '</div>'+
                                             '</div>');
                     });
-=======
-					
-
-
-					//Estructuras de información general de todos los restaurants
-
-					var estructura = ('<div class="col s4 m4" id="' + elId +'"> ' +
-							          	'<div class="card">' +
-							            	'<div class="card-image">'+
-							              		'<img class="img-style" src="' + img + '">' + 
-							            	'</div>' +
-							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"><p> ' + elNombre +  '</p></div>' +
-							              		'<div class="col s8 comuna right-align"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
-							            	'</div>' +
-							          	'</div>' +
-							        '</div>');
-
-					var estructura2 = ('<div class="col s4 m4" id="footer-' + elId +'"> ' +
-							          	'<div class="card">' +
-							            	'<div class="card-image">'+
-							              		'<img class="img-style" src="' + img + '">' + 
-							            	'</div>' +
-							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"><p> ' + elNombre +  '</p></div>' +
-							              		'<div class="col s8 comuna right-align"><p>' + comuna + '</p><i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
-							            	'</div>' +
-							          	'</div>' +
-							        '</div>');
-
-					$('.elegir').append('<option value="'+ city +'" id="'+cityId+'">'+ city +'</option>');
-
-					var mapSearch = {};
-					$('.elegir option').each(function () {
-					    if (mapSearch[this.value]) {
-					        $(this).remove()
-					    }
-					    mapSearch[this.value] = true;
-					});
-
-					$('.lista').append(estructura);
-
-					$('#'+ elId).click(function() {
-						$('.end').show();
-						$('.end').empty();
-						//Estructura contenido footer
-						$('.end').append('<div class="row center end-nombre">'+
-												'<div class="col s12"><span class="center">' + elNombre + '</span>'+
-													'<button id="'+elId + '-add"  class="add-cor"><i class="fa fa-heart"  aria-hidden="true"></i></button>'+
-												'</div>'+
-											  '</div>' +
-										     '<div class=" center end-datos">'+
-										     	'<div class="col s12">'+
-											      	'<h6 class="naranjo">Address</h6>'+
-											      	'<p>l'+ direccion +'</p>'+
-											      	'<h6 class="naranjo">Price</h6>'+
-											      	'<p>'+ moneda+costo +'</p>'+
-											      	'<h6 class="naranjo">Rating</h6>'+
-											      	'<p>'+ calificacion +'</p>'+
-											     '</div>'+
-										    '</div>');
-					});
-
-
-					$(".filtrar").click(function(){
-						var elegir = $(".elegir").val();
-						if (elegir == city){
-
-							$('.lista').hide();
-							$('.lista2').append(estructura2);
-							$('.end').empty();
-						}
->>>>>>> 8c0336a427c92ffd665b9f66190b778da2e4b072
 
 
                     $(".filtrar").click(function(){
