@@ -20262,7 +20262,7 @@ function init() {
         var maximo = 50;
         var kms = 10000;
         /* API variables */
-        var key = '354485b8128e52e86b87366a6444882c';
+        var key = '6b6572afb1176bb5737f5ce8c7bee502';
         
         llenarSelectDeCuisines(key);
         marcarCousinesEnMapa(key);
@@ -20403,7 +20403,7 @@ $(document).ready(function() {  //inicializar navbar de materialize
                 $("#name_message").hide();
                 localStorage.setItem('Name', nombre);
             //var nombreSignUp = localStorage.getItem('Name'); 
-			//alert(nombreSignUp);
+            //alert(nombreSignUp);
         }
 
         if(email == "" || !correo.test(email)){
@@ -20450,55 +20450,59 @@ $(document).ready(function() {  //inicializar navbar de materialize
         }
         
     });
+
 });
 
 
     /*SECCION CARGANDO IMAGEN PERFIL - tiene q estar fuera para q no se vaya todo al carajillo*/
     function subirImagen(){
-    	 $('#image-user').attr('src', localStorage.fileImage); //mostrara siempre la imagen guardada al cargar el documento
+         $('#image-user').attr('src', localStorage.fileImage); //mostrara siempre la imagen guardada al cargar el documento
 
-		function readURL(input) { //Pasa como parametro el input
-	        if (input.files[0] != undefined) {  //Si el input no esta vacío
-	            var reader = new FileReader(); // es una funcion predefinida de javascript permite que las aplicaciones web lean ficheros (o información en buffer) almacenados en el cliente, usando los objetos File o Blob.
-	            
-	            reader.onload = function (e) { //cuando termine de cargar en new FileReader
-	            	//console.log(e);  //Es el objeto completo de la imagen
-	            	//console.log(e.target.result); //Es la url de la imagen
-	            	localStorage.fileImage =  e.target.result; //Es la direccion donde esta almacenada la imagen del lado de usuario
-	                $('#image-user').attr('src', localStorage.fileImage);
-	            }
-	            reader.readAsDataURL(input.files[0]); //usado para leer el contenido del especificado Blob o File(Blob representa un objeto tipo fichero de datos como los de las imagenes).
-	        }
-	        else{
-	        	$('#image-user').attr('src', 'http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif');
-	        }
-	    }
-	    
-	    $("#imgInp").change(function(){ // cuando el input cambie llamara a la funcion readUrl
-	        readURL(this); 
-	    });
-	}subirImagen()
+        function readURL(input) { //Pasa como parametro el input
+            if (input.files[0] != undefined) {  //Si el input no esta vacío
+                var reader = new FileReader(); // es una funcion predefinida de javascript permite que las aplicaciones web lean ficheros (o información en buffer) almacenados en el cliente, usando los objetos File o Blob.
+                
+                reader.onload = function (e) { //cuando termine de cargar en new FileReader
+                    //console.log(e);  //Es el objeto completo de la imagen
+                    //console.log(e.target.result); //Es la url de la imagen
+                    localStorage.fileImage =  e.target.result; //Es la direccion donde esta almacenada la imagen del lado de usuario
+                    $('#image-user').attr('src', localStorage.fileImage);
+                }
+                reader.readAsDataURL(input.files[0]); //usado para leer el contenido del especificado Blob o File(Blob representa un objeto tipo fichero de datos como los de las imagenes).
+            }
+            else{
+                $('#image-user').attr('src', 'http://www.lumineers.me/images/core/profile-image-zabadnesterling.gif');
+            }
+        }
+        
+        $("#imgInp").change(function(){ // cuando el input cambie llamara a la funcion readUrl
+            readURL(this); 
+        });
+    }subirImagen()
 
 
 
+//contador para ir sumando los restaurants agregados a fovitos -- en el html profile agregue una clase add-fav
+var count = 0;
 $(document).ready(function() {
-	
-
 // INICIO FUNCIONES SEARCH
     var miUrl = 'https://developers.zomato.com/api/v2.1/search?entity_id=';
-	var key = '354485b8128e52e86b87366a6444882c';
+	var key = '70c11626c0920bd28981b1b2218f83fc';
 	var code = ['67','73','83','97','257','280'];
 
 	code.forEach(function(e){
 			$.ajax({
-				url: miUrl + e + '&entity_type=city&apikey=' + key,
+				url: miUrl + e + '&entity_type=city' ,
 				type: 'GET',
+				beforeSend: function(request) {
+                    request.setRequestHeader("user-key", key);
+                },
 				dataType: 'json'
 				//data: {param1: 'value1'},
 			})
 			.done(function(res){
 				res.restaurants.forEach(function(element){
-					var nombre = element.restaurant.name;
+					var elNombre = element.restaurant.name;
 					var img = element.restaurant.thumb;
 					var elId = element.restaurant.id;
 					var tipo = element.restaurant.cuisines;
@@ -20516,8 +20520,10 @@ $(document).ready(function() {
 						img = 'http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/kyaraben-comida-kawaii.jpg';
 					}
 
+					
 
-					/*var estructura = ('<li id="'+ elId +'"><img src="'+ img +'"><p>'+ nombre  +'</p><p>'+ comuna  +'</p></li>');*/
+
+					//Estructuras de información general de todos los restaurants
 
 					var estructura = ('<div class="col s4 m4" id="' + elId +'"> ' +
 							          	'<div class="card">' +
@@ -20525,7 +20531,7 @@ $(document).ready(function() {
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"> ' + nombre +  '</div>' +
+							              		'<div class="left-align nombre col s4"> ' + elNombre +  '</div>' +
 							              		'<div class="col s8 comuna right-align">' + comuna + ' <i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
@@ -20537,7 +20543,7 @@ $(document).ready(function() {
 							              		'<img class="img-style" src="' + img + '">' + 
 							            	'</div>' +
 							            	'<div class="card-content">' +
-							              		'<div class="left-align nombre col s4"> ' + nombre +  '</div>' +
+							              		'<div class="left-align nombre col s4"> ' + elNombre +  '</div>' +
 							              		'<div class="col s8 comuna right-align">' + comuna + ' <i class="fa fa-cutlery" aria-hidden="true"></i></div>' +
 							            	'</div>' +
 							          	'</div>' +
@@ -20558,8 +20564,11 @@ $(document).ready(function() {
 					$('#'+ elId).click(function() {
 						$('.end').show();
 						$('.end').empty();
-						$('.end').append('<div class=" center end-nombre">'+
-												'<div class="col s12">' + nombre +'<i class="fa fa-heart" aria-hidden="true"></i></div>'+
+						//Estructura contenido footer
+						$('.end').append('<div class="row center end-nombre">'+
+												'<div class="col s12"><span class="center">' + elNombre + '</span>'+
+													'<button id="'+elId + '-add"  class="add-cor"><i class="fa fa-heart"  aria-hidden="true"></i></button>'+
+												'</div>'+
 											  '</div>' +
 										     '<div class=" center end-datos">'+
 										     	'<div class="col s12">'+
@@ -20577,15 +20586,19 @@ $(document).ready(function() {
 					$(".filtrar").click(function(){
 						var elegir = $(".elegir").val();
 						if (elegir == city){
+
 							$('.lista').hide();
 							$('.lista2').append(estructura2);
+							$('.end').empty();
 						}
 
 						$('#footer-'+ elId).click(function() {
 							$('.end').show();
 							$('.end').empty();
 							$('.end').append('<div class="row center end-nombre">'+
-												'<div class="col s12">' + nombre +'</div>'+
+												'<div class="col s12"><span class="center">' + elNombre + '</span>'+
+													'<button id="'+elId + '-add" class="add-cor"><i class="fa fa-heart"  aria-hidden="true"></i></button>'+
+												'</div>'+
 											  '</div>' +
 										      '<div class="row center end-datos">'+
 										     	'<div class="col s12" >'+
@@ -20597,8 +20610,19 @@ $(document).ready(function() {
 											      	'<p>'+ calificacion +'</p>'+
 											     '</div>'+
 										      '</div>');
+	
 						});
-					});				
+					});
+
+					//Al hacer click en el boton con corazon fuera suamndo el contador y los elementos guardados
+					$('#'+ elId + '-add').click(function() {
+						count++;
+						var conta = localStorage.setItem('contador', count);
+						console.log(count);
+						var namenom = localStorage.setItem(('nameres' + count),elNombre);
+					});	
+
+								
 			    });
 			})
 			.fail(function() {
@@ -20606,6 +20630,15 @@ $(document).ready(function() {
 			})
 			
 		});
+
+//"se muestra contador guardado"
+	var conta = localStorage.getItem('contador');
+//"for que itere sobre las x veces del contador y sume todos los restaurants agregados"
+	for(var i = 1; i <= conta; i++){
+		$('.add-fav').append('<div class="col s4">' + 
+                				'<p>'+ localStorage.getItem('nameres' + i) +'</p>' +
+            				 '</div>');
+		}
 // FIN FUNCIONES SEARCH
 
 });
